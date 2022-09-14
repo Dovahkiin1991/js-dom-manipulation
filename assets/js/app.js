@@ -124,10 +124,12 @@
             let linkUrl = link.innerHTML.toLowerCase();
             let statsTable = document.createElement('table');
 
-            generateTable(statsTable, data[0][linkUrl]);
+            if(data[0][linkUrl]) {
+                generateTable(statsTable, data[0][linkUrl]);
 
-            document.getElementById('app__content').innerHTML = null;
-            document.getElementById('app__content').appendChild(statsTable);
+                document.getElementById('app__content').innerHTML = null;
+                document.getElementById('app__content').appendChild(statsTable);
+            }
         });
     });
 
